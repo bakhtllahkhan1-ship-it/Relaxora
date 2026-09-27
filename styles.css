@@ -11,7 +11,7 @@ nav{display:flex;gap:28px}nav a{color:var(--ink);text-decoration:none;font-weigh
 .hero{background:linear-gradient(120deg,var(--cream),var(--mint));padding:90px 0}
 .hero-content{display:grid;grid-template-columns:1.3fr .7fr;gap:60px;align-items:center}
 .eyebrow{font-size:12px;letter-spacing:2px;font-weight:800;margin-bottom:12px;color:#47736b}.center{text-align:center}
-h1{font-size:clamp(44px,7vw,78px);line-height:1.02;letter-spacing:-3px;margin-bottom:22px}h1 span{font-weight:400}
+h1{font-size:clamp(44px,7vw,78px);line-height:1.02;letter-spacing:-3px;margin-bottom:22px}h1 span{font-weight:100}
 .hero-text{font-size:19px;color:var(--muted);max-width:560px}.hero-buttons{display:flex;gap:12px;margin-top:30px}
 .btn{display:inline-block;padding:13px 22px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid transparent;cursor:pointer;font-size:15px}
 .primary{background:var(--ink);color:#fff}.secondary{background:#fff;color:var(--ink);border-color:var(--line)}
