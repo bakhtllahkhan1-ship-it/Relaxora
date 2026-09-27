@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Relaxora Home Wellness - professional at-home relaxation and wellness services.">
+  <title>Relaxora Home Wellness</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#home">Relax<span>ora</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <nav id="navMenu">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#booking">Book</a>
+        <a href="#partner">Become a Partner</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div>
+          <p class="eyebrow">HOME WELLNESS • KARACHI</p>
+          <h1>Relax at home.<br><span>Feel refreshed.</span></h1>
+          <p class="hero-text">Book a professional wellness session at a time that works for you.</p>
+          <div class="hero-buttons">
+            <a class="btn primary" href="#booking">Book a Service</a>
+            <a class="btn secondary" href="#services">View Services</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="circle">✦</div>
+          <h3>Comfort at your doorstep</h3>
+          <p>Simple booking, clear service options and a comfortable wellness experience at home.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <p class="eyebrow center">OUR SERVICES</p>
+        <h2>Choose your wellness session</h2>
+        <p class="section-intro">Select the service that best matches your relaxation needs.</p>
+
+        <div class="services">
+          <article class="service-card">
+            <div class="icon">◌</div>
+            <h3>Head & Scalp Relaxation</h3>
+            <p>Gentle relaxation focused on the head and scalp area.</p>
+            <div class="price">Starting from <strong>Rs. 1,500</strong></div>
+            <button class="select-btn" data-service="Head & Scalp Relaxation">Book This</button>
+          </article>
+
+          <article class="service-card featured">
+            <div class="badge">POPULAR</div>
+            <div class="icon">◒</div>
+            <h3>Back & Shoulder Relaxation</h3>
+            <p>A relaxation session focused on the back and shoulder area.</p>
+            <div class="price">Starting from <strong>Rs. 2,000</strong></div>
+            <button class="select-btn" data-service="Back & Shoulder Relaxation">Book This</button>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">✦</div>
+            <h3>Full-Body Wellness</h3>
+            <p>General full-body relaxation and wellness session.</p>
+            <div class="price">Starting from <strong>Rs. 3,500</strong></div>
+            <button class="select-btn" data-service="Full-Body Wellness">Book This</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="how section">
+      <div class="container">
+        <p class="eyebrow center">HOW IT WORKS</p>
+        <h2>Book in three simple steps</h2>
+        <div class="steps">
+          <div><span>01</span><h3>Choose</h3><p>Select your wellness service.</p></div>
+          <div><span>02</span><h3>Book</h3><p>Enter your contact and preferred time.</p></div>
+          <div><span>03</span><h3>Confirm</h3><p>Our team contacts you to confirm the booking.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking section" id="booking">
+      <div class="container booking-grid">
+        <div>
+          <p class="eyebrow">BOOK A SERVICE</p>
+          <h2>Request your session</h2>
+          <p>Submit your details. This demo form shows the booking flow; connect it to a database/backend before accepting real orders.</p>
+        </div>
+        <form id="bookingForm" class="form">
+          <label>Full Name<input type="text" id="name" required placeholder="Your name"></label>
+          <label>Phone Number<input type="tel" id="phone" required placeholder="03XX XXXXXXX"></label>
+          <label>Service
+            <select id="service" required>
+              <option value="">Select a service</option>
+              <option>Head & Scalp Relaxation</option>
+              <option>Back & Shoulder Relaxation</option>
+              <option>Full-Body Wellness</option>
+            </select>
+          </label>
+          <label>Preferred Date<input type="date" id="date" required></label>
+          <label>Preferred Time<input type="time" id="time" required></label>
+          <label>Area / Address<input type="text" id="address" required placeholder="Area and address"></label>
+          <button class="btn primary" type="submit">Submit Booking Request</button>
+          <p class="form-note">For safety and privacy, avoid entering unnecessary sensitive information.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="partner section" id="partner">
+      <div class="container partner-box">
+        <div>
+          <p class="eyebrow">JOIN OUR NETWORK</p>
+          <h2>Become a Wellness Partner</h2>
+          <p>Service providers can register their interest. Partner approval and identity verification should be handled before any real booking.</p>
+        </div>
+        <a class="btn secondary" href="#contact">Partner Registration</a>
+      </div>
+    </section>
+
+    <section class="contact section" id="contact">
+      <div class="container contact-grid">
+        <div><p class="eyebrow">CONTACT</p><h2>We’re here to help</h2><p>Replace these demo details with your real business phone, WhatsApp and email before launch.</p></div>
+        <div class="contact-card">
+          <p><strong>WhatsApp:</strong> +92 XXX XXXXXXX</p>
+          <p><strong>Email:</strong> hello@relaxora.example</p>
+          <p><strong>Service Area:</strong> Karachi</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer">
+      <div class="logo">Relax<span>ora</span></div>
+      <p>© 2026 Relaxora Home Wellness. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="successModal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="close" id="closeModal">×</button>
+      <div class="success">✓</div>
+      <h3>Booking Request Received</h3>
+      <p id="modalText"></p>
+      <button class="btn primary" id="modalOk">Done</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
