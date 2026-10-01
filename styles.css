@@ -34,3 +34,81 @@ h1{font-size:clamp(44px,7vw,78px);line-height:1.02;letter-spacing:-3px;margin-bo
 footer{background:#102d2d;color:#dce8e5}.footer{min-height:90px;display:flex;align-items:center;justify-content:space-between}.footer .logo{color:#fff}.footer p{font-size:13px}
 .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:50;place-items:center;padding:20px}.modal.show{display:grid}.modal-box{position:relative;background:#fff;padding:35px;border-radius:20px;text-align:center;max-width:420px;width:100%}.close{position:absolute;right:15px;top:10px;border:0;background:none;font-size:28px;cursor:pointer}.success{width:55px;height:55px;border-radius:50%;background:var(--mint);display:grid;place-items:center;margin:0 auto 15px;font-size:25px}.modal-box h3{font-size:23px}.modal-box p{color:var(--muted);margin:10px 0 22px}
 @media(max-width:760px){nav{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;padding:20px;flex-direction:column;gap:16px;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu-btn{display:block}.hero{padding:60px 0}.hero-content,.booking-grid,.contact-grid{grid-template-columns:1fr}.hero-card{display:none}h1{font-size:48px}.services,.steps{grid-template-columns:1fr}.section{padding:60px 0}.partner-box,.footer{flex-direction:column;align-items:flex-start}.footer{justify-content:center;padding:25px 0}}
+.partner-form-overlay {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.70);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.partner-form-box {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+.partner-form-box h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.partner-form-box p {
+  margin-bottom: 20px;
+}
+
+.partner-form-box label {
+  display: block;
+  margin-top: 14px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.partner-form-box input,
+.partner-form-box select,
+.partner-form-box textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.partner-form-box textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.close-form {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.partner-submit {
+  width: 100%;
+  margin-top: 22px;
+  padding: 13px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
