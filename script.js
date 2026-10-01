@@ -36,21 +36,33 @@ function closeModal(){
 document.getElementById('closeModal').addEventListener('click',closeModal);
 document.getElementById('modalOk').addEventListener('click',closeModal);
 modal.addEventListener('click',(e)=>{if(e.target===modal) closeModal();});
-function openPartnerForm() {
-  document.getElementById("partnerForm").style.display = "flex";
-}
+document.addEventListener("DOMContentLoaded", function () {
 
-function closePartnerForm() {
-  document.getElementById("partnerForm").style.display = "none";
-}
+  const partnerForm = document.getElementById("partnerForm");
+  const partnerRegistrationForm =
+    document.getElementById("partnerRegistrationForm");
 
-document
-  .getElementById("partnerRegistrationForm")
-  .addEventListener("submit", function(event) {
+  window.openPartnerForm = function () {
+    if (partnerForm) {
+      partnerForm.style.display = "flex";
+    }
+  };
 
-    event.preventDefault();
+  window.closePartnerForm = function () {
+    if (partnerForm) {
+      partnerForm.style.display = "none";
+    }
+  };
 
-    alert("Partner registration submitted successfully!");
+  if (partnerRegistrationForm) {
+    partnerRegistrationForm.addEventListener("submit", function (event) {
+      event.preventDefault();
 
-    this.reset();
-    closePartnerForm();
+      alert("Partner registration submitted successfully!");
+
+      partnerRegistrationForm.reset();
+      closePartnerForm();
+    });
+  }
+
+});
