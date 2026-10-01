@@ -36,3 +36,21 @@ function closeModal(){
 document.getElementById('closeModal').addEventListener('click',closeModal);
 document.getElementById('modalOk').addEventListener('click',closeModal);
 modal.addEventListener('click',(e)=>{if(e.target===modal) closeModal();});
+function openPartnerForm() {
+  document.getElementById("partnerForm").style.display = "flex";
+}
+
+function closePartnerForm() {
+  document.getElementById("partnerForm").style.display = "none";
+}
+
+document
+  .getElementById("partnerRegistrationForm")
+  .addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    alert("Partner registration submitted successfully!");
+
+    this.reset();
+    closePartnerForm();
