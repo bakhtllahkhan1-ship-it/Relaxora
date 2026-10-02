@@ -253,13 +253,26 @@
       required
     >
 
-    <label>Select Service</label>
-    <select id="service" name="service" required>
-      <option value="">Select Service</option>
-      <option value="Head Massage">Head & Scalp Relaxation</option>
-      <option value="Back Shoulder">Back & Shoulder Relaxation</option>
-      <option value="Full Body">Full-Body Wellness</option>
-    </select>
+    <label>Select Services</label>
+
+<div class="service-checkboxes">
+
+  <label class="service-option">
+    <input type="checkbox" name="services" value="Head Massage">
+    <span>Head & Scalp Relaxation</span>
+  </label>
+
+  <label class="service-option">
+    <input type="checkbox" name="services" value="Back & Shoulder">
+    <span>Back & Shoulder Relaxation</span>
+  </label>
+
+  <label class="service-option">
+    <input type="checkbox" name="services" value="Full Body Wellness">
+    <span>Full-Body Wellness</span>
+  </label>
+
+</div>
 
     <div class="step-buttons">
       <button type="button" onclick="previousPartnerStep(1)">
