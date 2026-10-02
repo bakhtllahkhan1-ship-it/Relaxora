@@ -173,93 +173,162 @@
 
     <h2>Partner Registration</h2>
     <p>Register with Relax Aura as a service partner.</p>
-
+    
     <form id="partnerRegistrationForm">
 
-      <label for="firstName">First Name</label>
-      <input
-        type="text"
-        id="firstName"
-        name="firstName"
-        placeholder="Enter first name"
-        required
-      >
+  <!-- STEP 1 -->
+  <div class="partner-step active" id="partnerStep1">
 
-      <label for="lastName">Last Name</label>
-      <input
-        type="text"
-        id="lastName"
-        name="lastName"
-        placeholder="Enter last name"
-        required
-      >
+    <h3>Step 1 of 3</h3>
 
-      <label for="dob">Date of Birth</label>
-      <input
-        type="date"
-        id="dob"
-        name="dob"
-        required
-      >
+    <label>Profile Picture</label>
+    <input
+      type="file"
+      id="profilePicture"
+      name="profilePicture"
+      accept="image/*"
+      required
+    >
 
-      <label for="gender">Gender</label>
-      <select id="gender" name="gender" required>
-        <option value="">Select Gender</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-      </select>
+    <label>First Name</label>
+    <input
+      type="text"
+      id="firstName"
+      name="firstName"
+      placeholder="Enter first name"
+      required
+    >
 
-      <label for="email">Email Address</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Enter email address"
-        required
-      >
+    <label>Last Name</label>
+    <input
+      type="text"
+      id="lastName"
+      name="lastName"
+      placeholder="Enter last name"
+      required
+    >
 
-      <label for="phone">Phone Number</label>
-      <input
-        type="tel"
-        id="phone"
-        name="phone"
-        placeholder="03XXXXXXXXX"
-        required
-      >
+    <label>Date of Birth</label>
+    <input
+      type="date"
+      id="dob"
+      name="dob"
+      required
+    >
 
-      <label for="cnicFront">CNIC Front Image</label>
-      <input
-        type="file"
-        id="cnicFront"
-        name="cnicFront"
-        accept="image/*"
-        required
-      >
+    <button type="button" class="partner-next" onclick="nextPartnerStep(2)">
+      Next
+    </button>
 
-      <label for="cnicBack">CNIC Back Image</label>
-      <input
-        type="file"
-        id="cnicBack"
-        name="cnicBack"
-        accept="image/*"
-        required
-      >
+  </div>
 
-      <label for="address">Address</label>
-      <textarea
-        id="address"
-        name="address"
-        placeholder="Enter your address"
-        required
-      ></textarea>
+
+  <!-- STEP 2 -->
+  <div class="partner-step" id="partnerStep2">
+
+    <h3>Step 2 of 3</h3>
+
+    <label>Gender</label>
+    <select id="gender" name="gender" required>
+      <option value="">Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+
+    <label>Email</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Enter email"
+      required
+    >
+
+    <label>Phone Number</label>
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      placeholder="03XXXXXXXXX"
+      required
+    >
+
+    <label>Select Service</label>
+    <select id="service" name="service" required>
+      <option value="">Select Service</option>
+      <option value="Head Massage">Head & Scalp Relaxation</option>
+      <option value="Back Shoulder">Back & Shoulder Relaxation</option>
+      <option value="Full Body">Full-Body Wellness</option>
+    </select>
+
+    <div class="step-buttons">
+      <button type="button" onclick="previousPartnerStep(1)">
+        Back
+      </button>
+
+      <button type="button" class="partner-next" onclick="nextPartnerStep(3)">
+        Next
+      </button>
+    </div>
+
+  </div>
+
+
+  <!-- STEP 3 -->
+  <div class="partner-step" id="partnerStep3">
+
+    <h3>Step 3 of 3</h3>
+
+    <label>CNIC Number</label>
+    <input
+      type="text"
+      id="cnic"
+      name="cnic"
+      placeholder="XXXXX-XXXXXXX-X"
+      required
+    >
+
+    <label>CNIC Front</label>
+    <input
+      type="file"
+      id="cnicFront"
+      name="cnicFront"
+      accept="image/*"
+      required
+    >
+
+    <label>CNIC Back</label>
+    <input
+      type="file"
+      id="cnicBack"
+      name="cnicBack"
+      accept="image/*"
+      required
+    >
+
+    <label>Address</label>
+    <textarea
+      id="address"
+      name="address"
+      placeholder="Enter your address"
+      required
+    ></textarea>
+
+    <div class="step-buttons">
+
+      <button type="button" onclick="previousPartnerStep(2)">
+        Back
+      </button>
 
       <button type="submit" class="partner-submit">
         Submit Registration
       </button>
 
-    </form>
+    </div>
 
   </div>
+
+</form>
 </div>
 </body>
 </html>
