@@ -66,3 +66,58 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
+function showPartnerStep(stepNumber) {
+  document.querySelectorAll(".partner-step").forEach(function(step) {
+    step.classList.remove("active");
+  });
+
+  document
+    .getElementById("partnerStep" + stepNumber)
+    .classList.add("active");
+}
+
+function nextPartnerStep(stepNumber) {
+
+  if (stepNumber === 2) {
+
+    const firstName = document.getElementById("firstName");
+    const lastName = document.getElementById("lastName");
+    const dob = document.getElementById("dob");
+    const profilePicture = document.getElementById("profilePicture");
+
+    if (
+      !firstName.value ||
+      !lastName.value ||
+      !dob.value ||
+      !profilePicture.files.length
+    ) {
+      alert("Please complete Step 1 first.");
+      return;
+    }
+  }
+
+  if (stepNumber === 3) {
+
+    const gender = document.getElementById("gender");
+    const email = document.getElementById("email");
+    const phone = document.getElementById("phone");
+    const service = document.getElementById("service");
+
+    if (
+      !gender.value ||
+      !email.value ||
+      !phone.value ||
+      !service.value
+    ) {
+      alert("Please complete Step 2 first.");
+      return;
+    }
+  }
+
+  showPartnerStep(stepNumber);
+}
+
+function previousPartnerStep(stepNumber) {
+  showPartnerStep(stepNumber);
+}
