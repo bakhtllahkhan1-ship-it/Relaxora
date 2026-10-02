@@ -102,17 +102,19 @@ function nextPartnerStep(stepNumber) {
     const gender = document.getElementById("gender");
     const email = document.getElementById("email");
     const phone = document.getElementById("phone");
-    const service = document.getElementById("service");
+    const services = document.querySelectorAll(
+  'input[name="services"]:checked'
+);
 
-    if (
-      !gender.value ||
-      !email.value ||
-      !phone.value ||
-      !service.value
-    ) {
-      alert("Please complete Step 2 first.");
-      return;
-    }
+if (
+  !gender.value ||
+  !email.value ||
+  !phone.value ||
+  services.length === 0
+) {
+  alert("Please complete Step 2 first.");
+  return;
+}
   }
 
   showPartnerStep(stepNumber);
