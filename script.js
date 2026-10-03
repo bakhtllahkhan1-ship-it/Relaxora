@@ -591,3 +591,87 @@ function raSubmitPartner() {
   );
 
 }
+
+// =========================================
+// RELAX AURA LOGIN / SIGNUP JAVASCRIPT
+// =========================================
+
+const authModal = document.getElementById("authModal");
+const loginSection = document.getElementById("loginSection");
+const signupSection = document.getElementById("signupSection");
+
+function openAuthModal() {
+  if (!authModal) return;
+
+  authModal.classList.add("show");
+  showLogin();
+}
+
+function closeAuthModal() {
+  if (!authModal) return;
+
+  authModal.classList.remove("show");
+}
+
+function showLogin() {
+  if (loginSection) {
+    loginSection.style.display = "block";
+  }
+
+  if (signupSection) {
+    signupSection.style.display = "none";
+  }
+}
+
+function showSignup() {
+  if (loginSection) {
+    loginSection.style.display = "none";
+  }
+
+  if (signupSection) {
+    signupSection.style.display = "block";
+  }
+}
+
+
+// Close when clicking outside the box
+if (authModal) {
+  authModal.addEventListener("click", function (event) {
+    if (event.target === authModal) {
+      closeAuthModal();
+    }
+  });
+}
+
+
+// Login demo
+const loginForm = document.getElementById("loginForm");
+
+if (loginForm) {
+  loginForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    alert("Login interface is working. Database will be connected later.");
+  });
+}
+
+
+// Signup demo
+const signupForm = document.getElementById("signupForm");
+
+if (signupForm) {
+  signupForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const password = document.getElementById("signupPassword")?.value;
+    const confirmPassword =
+      document.getElementById("signupConfirmPassword")?.value;
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    alert("Signup interface is working. Database will be connected later.");
+  });
+}
