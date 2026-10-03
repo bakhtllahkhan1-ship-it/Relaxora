@@ -782,3 +782,21 @@ footer{background:#102d2d;color:#dce8e5}.footer{min-height:90px;display:flex;ali
     font-size: 23px;
   }
 }
+
+/* RELAXORA DARK GREEN BUTTONS */
+
+.next-btn,
+.login-btn,
+.signup-btn,
+.auth-btn {
+  background-color: #1B5E20 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+.next-btn:hover,
+.login-btn:hover,
+.signup-btn:hover,
+.auth-btn:hover {
+  background-color: #145A1A !important;
+}
