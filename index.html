@@ -161,187 +161,390 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
-  <!-- Partner Registration Form -->
-<div id="partnerForm" class="partner-form-overlay">
+  <!-- RELAX AURA PARTNER REGISTRATION -->
 
-  <div class="partner-form-box">
+<div id="raPartnerModal" class="ra-partner-modal">
 
-    <button type="button" class="close-form" onclick="closePartnerForm()">
-      &times;
+  <div class="ra-partner-box">
+
+    <!-- Close -->
+    <button type="button" class="ra-partner-close" onclick="closePartnerForm()">
+      ×
     </button>
 
-    <h2>Partner Registration</h2>
-    <p>Register with Relax Aura as a service partner.</p>
-    
-    <form id="partnerRegistrationForm">
+    <!-- STEP 1 -->
+    <div class="ra-partner-step active" id="raPartnerStep1">
 
-  <!-- STEP 1 -->
-  <div class="partner-step active" id="partnerStep1">
+      <h2>Personal information</h2>
 
-    <h3>Step 1 of 3</h3>
+      <!-- Profile Picture -->
+      <div class="ra-profile-area">
 
-    <label>Profile Picture</label>
-    <input
-      type="file"
-      id="profilePicture"
-      name="profilePicture"
-      accept="image/*"
-      required
-    >
+        <label for="raProfilePicture" class="ra-profile-upload">
 
-    <label>First Name</label>
-    <input
-      type="text"
-      id="firstName"
-      name="firstName"
-      placeholder="Enter first name"
-      required
-    >
+          <img id="raProfilePreview" src="" alt="Profile picture">
 
-    <label>Last Name</label>
-    <input
-      type="text"
-      id="lastName"
-      name="lastName"
-      placeholder="Enter last name"
-      required
-    >
+          <div id="raProfilePlaceholder" class="ra-profile-placeholder">
+            +
+          </div>
 
-    <label>Date of Birth</label>
-    <input
-      type="date"
-      id="dob"
-      name="dob"
-      required
-    >
+          <span class="ra-camera-text">Personal picture</span>
 
-    <button type="button" class="partner-next" onclick="nextPartnerStep(2)">
-      Next
-    </button>
+        </label>
 
-  </div>
+        <button
+          type="button"
+          id="raRemovePhoto"
+          class="ra-remove-photo"
+          style="display:none;"
+        >
+          ×
+        </button>
+
+        <input
+          type="file"
+          id="raProfilePicture"
+          accept="image/*"
+          hidden
+        >
+
+      </div>
 
 
-  <!-- STEP 2 -->
-  <div class="partner-step" id="partnerStep2">
+      <!-- First Name -->
+      <div class="ra-input-box">
 
-    <h3>Step 2 of 3</h3>
+        <label>First name</label>
 
-    <label>Gender</label>
-    <select id="gender" name="gender" required>
-      <option value="">Select Gender</option>
-      <option value="Male">Male</option>
-      <option value="Female">Female</option>
-    </select>
+        <input
+          type="text"
+          id="raFirstName"
+          placeholder="Enter first name"
+        >
 
-    <label>Email</label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      placeholder="Enter email"
-      required
-    >
+      </div>
 
-    <label>Phone Number</label>
-    <input
-      type="tel"
-      id="phone"
-      name="phone"
-      placeholder="03XXXXXXXXX"
-      required
-    >
 
-    <label>Select Services</label>
+      <!-- Last Name -->
+      <div class="ra-input-box">
 
-<div class="service-checkboxes">
+        <label>Last name</label>
 
-  <label class="service-option">
-    <input type="checkbox" name="services" value="Head Massage">
-    <span>Head & Scalp Relaxation</span>
-  </label>
+        <input
+          type="text"
+          id="raLastName"
+          placeholder="Enter last name"
+        >
 
-  <label class="service-option">
-    <input type="checkbox" name="services" value="Back & Shoulder">
-    <span>Back & Shoulder Relaxation</span>
-  </label>
+      </div>
 
-  <label class="service-option">
-    <input type="checkbox" name="services" value="Full Body Wellness">
-    <span>Full-Body Wellness</span>
-  </label>
 
-</div>
+      <!-- Date of Birth -->
+      <div class="ra-input-box">
 
-    <div class="step-buttons">
-      <button type="button" onclick="previousPartnerStep(1)">
-        Back
-      </button>
+        <label>Date of birth</label>
 
-      <button type="button" class="partner-next" onclick="nextPartnerStep(3)">
-        Next
-      </button>
+        <input
+          type="date"
+          id="raDob"
+        >
+
+      </div>
+
+
+      <!-- Bottom -->
+      <div class="ra-bottom">
+
+        <div class="ra-progress-info">
+          <span>1 of 4</span>
+
+          <div class="ra-progress">
+            <div class="ra-progress-fill" style="width:25%;"></div>
+          </div>
+        </div>
+
+        <button
+          type="button"
+          class="ra-next"
+          onclick="raNextStep(2)"
+        >
+          Next <span>›</span>
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- STEP 2 -->
+    <div class="ra-partner-step" id="raPartnerStep2">
+
+      <h2>Contact information</h2>
+
+
+      <div class="ra-input-box">
+
+        <label>Gender</label>
+
+        <select id="raGender">
+
+          <option value="">Select gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="ra-input-box">
+
+        <label>Email</label>
+
+        <input
+          type="email"
+          id="raEmail"
+          placeholder="Enter email"
+        >
+
+      </div>
+
+
+      <div class="ra-input-box">
+
+        <label>Phone number</label>
+
+        <input
+          type="tel"
+          id="raPhone"
+          placeholder="03XXXXXXXXX"
+        >
+
+      </div>
+
+
+      <div class="ra-bottom">
+
+        <div class="ra-progress-info">
+
+          <span>2 of 4</span>
+
+          <div class="ra-progress">
+            <div class="ra-progress-fill" style="width:50%;"></div>
+          </div>
+
+        </div>
+
+        <div class="ra-buttons">
+
+          <button
+            type="button"
+            class="ra-back"
+            onclick="raPreviousStep(1)"
+          >
+            ‹
+          </button>
+
+          <button
+            type="button"
+            class="ra-next"
+            onclick="raNextStep(3)"
+          >
+            Next <span>›</span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- STEP 3 -->
+    <div class="ra-partner-step" id="raPartnerStep3">
+
+      <h2>Select services</h2>
+
+      <p class="ra-subtitle">
+        Select the services you provide
+      </p>
+
+
+      <label class="ra-service-option">
+
+        <input
+          type="checkbox"
+          name="raServices"
+          value="Head Massage"
+        >
+
+        <span>Head & Scalp Relaxation</span>
+
+      </label>
+
+
+      <label class="ra-service-option">
+
+        <input
+          type="checkbox"
+          name="raServices"
+          value="Back & Shoulder"
+        >
+
+        <span>Back & Shoulder Relaxation</span>
+
+      </label>
+
+
+      <label class="ra-service-option">
+
+        <input
+          type="checkbox"
+          name="raServices"
+          value="Full Body Wellness"
+        >
+
+        <span>Full-Body Wellness</span>
+
+      </label>
+
+
+      <div class="ra-bottom">
+
+        <div class="ra-progress-info">
+
+          <span>3 of 4</span>
+
+          <div class="ra-progress">
+            <div class="ra-progress-fill" style="width:75%;"></div>
+          </div>
+
+        </div>
+
+        <div class="ra-buttons">
+
+          <button
+            type="button"
+            class="ra-back"
+            onclick="raPreviousStep(2)"
+          >
+            ‹
+          </button>
+
+          <button
+            type="button"
+            class="ra-next"
+            onclick="raNextStep(4)"
+          >
+            Next <span>›</span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- STEP 4 -->
+    <div class="ra-partner-step" id="raPartnerStep4">
+
+      <h2>Identity verification</h2>
+
+      <p class="ra-subtitle">
+        Enter your identity information
+      </p>
+
+
+      <div class="ra-input-box">
+
+        <label>CNIC Number</label>
+
+        <input
+          type="text"
+          id="raCnic"
+          placeholder="XXXXX-XXXXXXX-X"
+        >
+
+      </div>
+
+
+      <div class="ra-input-box">
+
+        <label>CNIC Front</label>
+
+        <input
+          type="file"
+          id="raCnicFront"
+          accept="image/*"
+        >
+
+      </div>
+
+
+      <div class="ra-input-box">
+
+        <label>CNIC Back</label>
+
+        <input
+          type="file"
+          id="raCnicBack"
+          accept="image/*"
+        >
+
+      </div>
+
+
+      <div class="ra-input-box">
+
+        <label>Address</label>
+
+        <textarea
+          id="raAddress"
+          placeholder="Enter your address"
+        ></textarea>
+
+      </div>
+
+
+      <div class="ra-bottom">
+
+        <div class="ra-progress-info">
+
+          <span>4 of 4</span>
+
+          <div class="ra-progress">
+            <div class="ra-progress-fill" style="width:100%;"></div>
+          </div>
+
+        </div>
+
+        <div class="ra-buttons">
+
+          <button
+            type="button"
+            class="ra-back"
+            onclick="raPreviousStep(3)"
+          >
+            ‹
+          </button>
+
+          <button
+            type="button"
+            class="ra-next"
+            onclick="raSubmitPartner()"
+          >
+            Submit
+          </button>
+
+        </div>
+
+      </div>
+
     </div>
 
   </div>
 
-
-  <!-- STEP 3 -->
-  <div class="partner-step" id="partnerStep3">
-
-    <h3>Step 3 of 3</h3>
-
-    <label>CNIC Number</label>
-    <input
-      type="text"
-      id="cnic"
-      name="cnic"
-      placeholder="XXXXX-XXXXXXX-X"
-      required
-    >
-
-    <label>CNIC Front</label>
-    <input
-      type="file"
-      id="cnicFront"
-      name="cnicFront"
-      accept="image/*"
-      required
-    >
-
-    <label>CNIC Back</label>
-    <input
-      type="file"
-      id="cnicBack"
-      name="cnicBack"
-      accept="image/*"
-      required
-    >
-
-    <label>Address</label>
-    <textarea
-      id="address"
-      name="address"
-      placeholder="Enter your address"
-      required
-    ></textarea>
-
-    <div class="step-buttons">
-
-      <button type="button" onclick="previousPartnerStep(2)">
-        Back
-      </button>
-
-      <button type="submit" class="partner-submit">
-        Submit Registration
-      </button>
-
-    </div>
-
-  </div>
-
-</form>
 </div>
 </body>
 </html>
