@@ -546,6 +546,79 @@
   </div>
 
 </div>
+  <!-- LOGIN / SIGNUP MODAL -->
+
+<div id="authModal" class="auth-modal">
+
+  <div class="auth-box">
+
+    <button type="button" class="auth-close" onclick="closeAuthModal()">
+      &times;
+    </button>
+
+    <div id="loginSection">
+
+      <h2>Welcome Back</h2>
+      <p>Login to your Relax Aura account</p>
+
+      <form id="loginForm">
+
+        <label>Email or Phone Number</label>
+        <input type="text" id="loginContact"
+               placeholder="Enter email or phone number" required>
+
+        <label>Password</label>
+        <input type="password" id="loginPassword"
+               placeholder="Enter password" required>
+
+        <button type="submit" class="auth-submit">Login</button>
+
+      </form>
+
+      <button type="button" class="auth-link" onclick="showSignup()">
+        Create a new account
+      </button>
+
+      <button type="button" class="forgot-link">
+        Forgot Password?
+      </button>
+
+    </div>
+
+    <div id="signupSection" style="display:none;">
+
+      <h2>Create Account</h2>
+      <p>Join Relax Aura</p>
+
+      <form id="signupForm">
+
+        <label>Email or Phone Number</label>
+        <input type="text" id="signupContact"
+               placeholder="Enter email or phone number" required>
+
+        <label>Password</label>
+        <input type="password" id="signupPassword"
+               placeholder="Create password" required>
+
+        <label>Confirm Password</label>
+        <input type="password" id="signupConfirmPassword"
+               placeholder="Confirm password" required>
+
+        <button type="submit" class="auth-submit">
+          Create Account
+        </button>
+
+      </form>
+
+      <button type="button" class="auth-link" onclick="showLogin()">
+        Already have an account? Login
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
   <script src="script.js"></script>
 </body>
 </html>
