@@ -737,7 +737,7 @@ footer{background:#102d2d;color:#dce8e5}.footer{min-height:90px;display:flex;ali
   border: none;
   border-radius: 12px;
   background: #b8f000;
-  color: #111;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -781,15 +781,3 @@ footer{background:#102d2d;color:#dce8e5}.footer{min-height:90px;display:flex;ali
   .auth-box h2 {
     font-size: 23px;
   }
-  
-/* RELAXORA DARK GREEN - LOGIN BUTTON */
-
-.auth-submit {
-  background-color: #1B5E20 !important;
-  color: #ffffff !important;
-  border: none !important;
-}
-
-.auth-submit:hover {
-  background-color: #145A1A !important;
-}
