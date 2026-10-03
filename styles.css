@@ -616,6 +616,138 @@ footer{background:#102d2d;color:#dce8e5}.footer{min-height:90px;display:flex;ali
   }
 
 }
+
 .service-option span {
   font-size: 15px;
+}
+
+/* =================================
+   RELAX AURA LOGIN / SIGNUP
+================================= */
+
+.auth-modal {
+  display: none;
+  position: fixed;
+  z-index: 100000;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.auth-modal.show {
+  display: flex;
+}
+
+.auth-box {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px 25px;
+  box-sizing: border-box;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.auth-close {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  border: none;
+  background: transparent;
+  font-size: 30px;
+  cursor: pointer;
+  color: #333;
+}
+
+.auth-box h2 {
+  margin: 0 0 8px;
+  font-size: 25px;
+  color: #111;
+}
+
+.auth-box p {
+  margin: 0 0 22px;
+  color: #777;
+  font-size: 14px;
+}
+
+.auth-box label {
+  display: block;
+  margin: 14px 0 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 14px;
+  box-sizing: border-box;
+  border: none;
+  background: #f3f3f3;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+}
+
+.auth-box input:focus {
+  box-shadow: 0 0 0 2px rgba(184, 240, 0, 0.35);
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: 22px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #b8f000;
+  color: #111;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.auth-link,
+.forgot-link {
+  display: block;
+  width: 100%;
+  margin-top: 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.forgot-link {
+  margin-top: 8px;
+  color: #777;
+}
+
+.auth-link {
+  font-weight: 600;
+}
+
+.auth-submit:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+
+  .auth-modal {
+    padding: 10px;
+  }
+
+  .auth-box {
+    padding: 28px 18px 22px;
+    border-radius: 18px;
+  }
+
+  .auth-box h2 {
+    font-size: 23px;
+  }
 }
