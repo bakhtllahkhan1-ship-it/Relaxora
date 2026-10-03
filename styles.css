@@ -782,14 +782,14 @@ footer{background:#102d2d;color:#dce8e5}.footer{min-height:90px;display:flex;ali
     font-size: 23px;
   }
   
-/* RELAXORA - LOGIN / SIGN UP BUTTON */
-.auth-login-btn {
+/* RELAXORA DARK GREEN - LOGIN BUTTON */
+
+.auth-submit {
   background-color: #1B5E20 !important;
   color: #ffffff !important;
   border: none !important;
 }
 
-.auth-login-btn:hover {
+.auth-submit:hover {
   background-color: #145A1A !important;
-  color: #ffffff !important;
 }
