@@ -10,7 +10,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 28px;
-}
+} 
 
 nav a {
   color: var(--ink);
