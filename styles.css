@@ -778,6 +778,15 @@ footer{background:#102d2d;color:#dce8e5}.footer{min-height:90px;display:flex;ali
     border-radius: 18px;
   }
 
+  .partner-register-btn{
+  background:#1B5E20 !important;
+  color:#ffffff !important;
+  border-color:#1B5E20 !important;
+}
+
+.partner-register-btn:hover{
+  background:#145A19 !important;
+}
   .auth-box h2 {
     font-size: 23px;
   }
