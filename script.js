@@ -675,3 +675,67 @@ if (signupForm) {
     alert("Signup interface is working. Database will be connected later.");
   });
 }
+
+/* RELAX AURA SUPABASE AUTH */
+
+const loginForm = document.getElementById("loginForm");
+const signupForm = document.getElementById("signupForm");
+
+if (signupForm) {
+  signupForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const contact = document.getElementById("signupContact").value.trim();
+    const password = document.getElementById("signupPassword").value;
+    const confirmPassword = document.getElementById("signupConfirmPassword").value;
+
+    if (!contact.includes("@")) {
+      alert("Please use an email address for now.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+
+    const { data, error } = await supabaseClient.auth.signUp({
+      email: contact,
+      password: password
+    });
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    alert("Account created. Please check your email to verify your account.");
+  });
+}
+
+if (loginForm) {
+  loginForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const contact = document.getElementById("loginContact").value.trim();
+    const password = document.getElementById("loginPassword").value;
+
+    if (!contact.includes("@")) {
+      alert("Please use your email address for now.");
+      return;
+    }
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+      email: contact,
+      password: password
+    });
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    alert("Login successful!");
+    closeAuthModal();
+  });
+}
