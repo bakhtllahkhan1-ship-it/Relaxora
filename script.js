@@ -643,35 +643,3 @@ if (authModal) {
   });
 }
 
-
-// Login demo
-const loginForm = document.getElementById("loginForm");
-
-if (loginForm) {
-  loginForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    alert("Login interface is working. Database will be connected later.");
-  });
-}
-
-
-// Signup demo
-const signupForm = document.getElementById("signupForm");
-
-if (signupForm) {
-  signupForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    const password = document.getElementById("signupPassword")?.value;
-    const confirmPassword =
-      document.getElementById("signupConfirmPassword")?.value;
-
-    if (password !== confirmPassword) {
-      alert("Passwords do not match.");
-      return;
-    }
-
-    alert("Signup interface is working. Database will be connected later.");
-  });
-}
