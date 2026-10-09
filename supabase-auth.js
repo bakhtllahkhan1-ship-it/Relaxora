@@ -5,8 +5,8 @@
   "use strict";
 
   // Apna Supabase URL aur Publishable Key yahan paste karein
-  const SUPABASE_URL = https://rayowodkqmjubwlvybqu.supabase.co/rest/v1/
-  const SUPABASE_KEY =  sb_publishable_8HLpMMIzpcgEb3vQN5Az4Q_CS8OvtdB
+  const SUPABASE_URL = "https://rayowodkqmjubwlvybqu.supabase.co/rest/v1/";
+  const SUPABASE_KEY = "sb_publishable_8HLpMMIzpcgEb3vQN5Az4Q_CS8OvtdB";
 
   function showMessage(message) {
     alert(message);
