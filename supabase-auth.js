@@ -254,7 +254,7 @@
         options: {
           redirectTo: window.location.origin
         }
-      });
+      }); 
 
       if (error) {
         alert("Facebook login error: " + error.message);
