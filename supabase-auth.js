@@ -215,4 +215,50 @@
   } else {
     loadSupabaseLibrary();
   }
+  
+  // GOOGLE SIGN UP / LOGIN
+  const googleBtn = document.getElementById("googleSignupBtn");
+
+  if (googleBtn) {
+    googleBtn.addEventListener("click", async function () {
+      if (!window.supabaseClient) {
+        alert("Supabase is not ready. Please try again.");
+        return;
+      }
+
+      const { error } = await window.supabaseClient.auth.signInWithOAuth({
+        provider: "google",
+        options: {
+          redirectTo: window.location.origin
+        }
+      });
+
+      if (error) {
+        alert("Google login error: " + error.message);
+      }
+    });
+  }
+
+  // FACEBOOK SIGN UP / LOGIN
+  const facebookBtn = document.getElementById("facebookSignupBtn");
+
+  if (facebookBtn) {
+    facebookBtn.addEventListener("click", async function () {
+      if (!window.supabaseClient) {
+        alert("Supabase is not ready. Please try again.");
+        return;
+      }
+
+      const { error } = await window.supabaseClient.auth.signInWithOAuth({
+        provider: "facebook",
+        options: {
+          redirectTo: window.location.origin
+        }
+      });
+
+      if (error) {
+        alert("Facebook login error: " + error.message);
+      }
+    });
+  }
 })();
