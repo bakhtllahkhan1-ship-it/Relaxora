@@ -787,6 +787,41 @@ footer{background:#102d2d;color:#dce8e5}.footer{min-height:90px;display:flex;ali
 .partner-register-btn:hover{
   background:#145A19 !important;
 }
+  
+/* Relax Aura Social Signup Buttons */
+
+#googleSignupBtn,
+#facebookSignupBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 48px;
+  margin: 10px 0;
+  padding: 12px 16px;
+  border: 1px solid #d5d9d8;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #173b3b;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background 0.2s ease;
+}
+
+#googleSignupBtn:hover,
+#facebookSignupBtn:hover {
+  background: #f2f7f5;
+}
+
+#googleSignupBtn:focus-visible,
+#facebookSignupBtn:focus-visible {
+  outline: 2px solid #173b3b;
+  outline-offset: 2px;
+}
+
   .auth-box h2 {
     font-size: 23px;
   }
