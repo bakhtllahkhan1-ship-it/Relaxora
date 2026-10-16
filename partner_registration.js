@@ -1,11 +1,12 @@
 
+
 /* RELAX AURA - PARTNER REGISTRATION */
 
 async function raSubmitPartner() {
   const client = window.supabaseClient;
 
   if (!client) {
-    alert("Supabase connection is not ready. Refresh the website.");
+    alert("ERROR: Supabase client is not connected.");
     return;
   }
 
@@ -15,17 +16,19 @@ async function raSubmitPartner() {
 
   if (button) button.disabled = true;
 
+  const uploadedPaths = [];
+
   try {
     const { data: authData, error: authError } =
       await client.auth.getUser();
 
-    if (authError || !authData.user) {
-      alert("Please log in before registering as a partner.");
-      return;
+    if (authError) throw authError;
+
+    if (!authData.user) {
+      throw new Error("Please log in before submitting.");
     }
 
     const user = authData.user;
-
     const getValue = (id) =>
       document.getElementById(id)?.value?.trim() || "";
 
@@ -42,14 +45,12 @@ async function raSubmitPartner() {
       document.querySelectorAll(
         'input[name="raServices"]:checked'
       )
-    ).map((item) => item.value);
+    ).map(item => item.value);
 
     const profileFile =
       document.getElementById("raProfilePicture")?.files?.[0];
-
     const frontFile =
       document.getElementById("raCnicFront")?.files?.[0];
-
     const backFile =
       document.getElementById("raCnicBack")?.files?.[0];
 
@@ -58,37 +59,30 @@ async function raSubmitPartner() {
       !email || !phone || !cnic || !address ||
       services.length === 0 || !frontFile || !backFile
     ) {
-      alert("Please complete all fields and upload both CNIC images.");
-      return;
+      throw new Error(
+        "Complete all fields and select both document images."
+      );
     }
 
-    const files = [
-      profileFile,
-      frontFile,
-      backFile
-    ].filter(Boolean);
+    const files = [profileFile, frontFile, backFile].filter(Boolean);
 
     for (const file of files) {
       if (!["image/jpeg", "image/png", "image/webp"].includes(file.type)) {
-        alert("Images must be JPG, PNG, or WEBP.");
-        return;
+        throw new Error("Images must be JPG, PNG, or WEBP.");
       }
 
       if (file.size > 5 * 1024 * 1024) {
-        alert("Each image must be 5 MB or smaller.");
-        return;
+        throw new Error("Each image must be 5 MB or smaller.");
       }
     }
 
     const bucket = "partner_documents";
-    const uploadedPaths = [];
 
     async function uploadImage(file, label) {
       const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
-      const path =
-        `${user.id}/${Date.now()}_${label}_${safeName}`;
+      const path = `${user.id}/${Date.now()}_${label}_${safeName}`;
 
-      const { error } = await client.storage
+      const { data, error } = await client.storage
         .from(bucket)
         .upload(path, file, {
           contentType: file.type,
@@ -98,7 +92,7 @@ async function raSubmitPartner() {
       if (error) throw error;
 
       uploadedPaths.push(path);
-      return path;
+      return data.path;
     }
 
     const profilePath = profileFile
@@ -113,26 +107,29 @@ async function raSubmitPartner() {
       first_name: firstName,
       last_name: lastName,
       date_of_birth: dob,
-      gender: gender,
-      email: email,
-      phone: phone,
+      gender,
+      email,
+      phone,
       profile_picture: profilePath,
       service: JSON.stringify(services),
       nic_number: cnic,
       nic_front_picture: frontPath,
       nic_back_picture: backPath,
-      address: address
+      address
     };
 
-    const { error: insertError } = await client
+    const { data, error: insertError } = await client
       .from("partners")
-      .insert(partnerData);
+      .insert(partnerData)
+      .select("id");
 
-    if (insertError) {
-      throw insertError;
+    if (insertError) throw insertError;
+
+    if (!data || data.length === 0) {
+      throw new Error("No saved record was returned by Supabase.");
     }
 
-    alert("Partner registration submitted successfully!");
+    alert("SUCCESS: Partner registration saved. Record ID: " + data[0].id);
 
     if (typeof closePartnerForm === "function") {
       closePartnerForm();
@@ -140,11 +137,14 @@ async function raSubmitPartner() {
 
   } catch (error) {
     console.error("Partner registration error:", error);
+
     alert(
-      "Registration could not be saved. Please check your Supabase policies and table columns, then try again."
+      "REGISTRATION ERROR:\n" +
+      (error.message || JSON.stringify(error)) +
+      (error.code ? "\nCode: " + error.code : "")
     );
+
   } finally {
     if (button) button.disabled = false;
   }
 }
-
