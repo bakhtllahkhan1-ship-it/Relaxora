@@ -1,6 +1,9 @@
 
 /* RELAX AURA - PARTNER REGISTRATION */
 
+console.log("PARTNER REGISTRATION SCRIPT LOADED");
+window.raSubmitPartner = raSubmitPartner;
+
 async function raSubmitPartner() {
   const client = window.supabaseClient;
 
