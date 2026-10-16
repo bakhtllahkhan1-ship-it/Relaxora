@@ -583,13 +583,6 @@ function raSubmitPartner() {
 
     return;
 
-  }
-
-
-  alert(
-    "Partner Registration interface is working successfully!"
-  );
-
 }
 
 // =========================================
