@@ -543,48 +543,6 @@ if (partnerModal) {
 }
 
 
-/* =========================================
-   PARTNER REGISTRATION SUBMIT
-   ========================================= */
-
-function raSubmitPartner() {
-
-  const cnic =
-    document
-      .getElementById("raCnic")
-      ?.value.trim();
-
-  const cnicFront =
-    document
-      .getElementById("raCnicFront");
-
-  const cnicBack =
-    document
-      .getElementById("raCnicBack");
-
-  const address =
-    document
-      .getElementById("raAddress")
-      ?.value.trim();
-
-
-  if (
-    !cnic ||
-    !cnicFront ||
-    !cnicFront.files.length ||
-    !cnicBack ||
-    !cnicBack.files.length ||
-    !address
-  ) {
-
-    alert(
-      "Please complete all information first."
-    );
-
-    return;
-
-}
-
 // =========================================
 // RELAX AURA LOGIN / SIGNUP JAVASCRIPT
 // =========================================
