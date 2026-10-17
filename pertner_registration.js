@@ -2,9 +2,8 @@
 /* RELAX AURA - PARTNER REGISTRATION */
 
 console.log("PARTNER REGISTRATION SCRIPT LOADED");
-window.raSubmitPartnerHandler = raSubmitPartner;
 
-async function raSubmitPartner() {
+async function raSubmitPartnerHandler() {
   const client = window.supabaseClient;
 
   if (!client) {
@@ -149,4 +148,5 @@ async function raSubmitPartner() {
   } finally {
     if (button) button.disabled = false;
   }
+  window.raSubmitPartnerHandler = raSubmitPartner;
 }
